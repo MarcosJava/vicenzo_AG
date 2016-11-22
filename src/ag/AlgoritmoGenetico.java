@@ -23,9 +23,6 @@ public class AlgoritmoGenetico {
     Cromossomo cromossomo3 = new Cromossomo();
             
     public void rodaScriptCaderno(int tamanho){
-    	
-    	
-    	
         iniciaPopulacao(tamanho);
         
         for(int i = 1; i <= TelaConsole.ger; i++){
@@ -46,7 +43,7 @@ public class AlgoritmoGenetico {
                 completa();
             }
             
-            //... Ordena para avaliação roleta!!!
+            //... Ordena para avaliaÃ§Ã£o roleta!!!
             Collections.sort(populacao, new FunctionCalcExpression());
             
             imprime(populacao, i);
@@ -66,7 +63,7 @@ public class AlgoritmoGenetico {
             individuoZ = ((aleatorio.nextDouble() * (TelaConsole.maiorIntervalo - TelaConsole.menorIntervalo + 1)) + TelaConsole.menorIntervalo);
             populacao.add(new Cromossomo(individuoX,individuoY,individuoZ));
         }
-        //Avaliação + Biblioteca de funcoes
+        //AvaliaÃ§Ã£o + Biblioteca de funcoes
         Collections.sort(populacao, new FunctionCalcExpression());
     }
     
@@ -128,7 +125,7 @@ public class AlgoritmoGenetico {
         //Se o numero de taxa de mutacao
         if(aleatorio.nextDouble() <= TelaConsole.mutacao){
         	
-        	//  MUTAÇÃO 
+        	//  MUTAÃ‡ÃƒO 
             x = x + (aleatorio.nextDouble()* ( TelaConsole.maiorIntervalo -  TelaConsole.menorIntervalo + 1)) + TelaConsole.menorIntervalo;
             y = y + (aleatorio.nextDouble()* ( TelaConsole.maiorIntervalo - TelaConsole.menorIntervalo + 1)) + TelaConsole.menorIntervalo;
             z = z + (aleatorio.nextDouble()* ( TelaConsole.maiorIntervalo - TelaConsole.menorIntervalo + 1)) + TelaConsole.menorIntervalo;
@@ -158,7 +155,7 @@ public class AlgoritmoGenetico {
     public void imprime(ArrayList b, int index){
         ListIterator i = b.listIterator();
 
-        System.out.println("\n A " + index + "ª geração teve o resultado :");
+        System.out.println("\n A " + index + "Âº geraÃ§Ã£o teve o resultado :");
         while (i.hasNext()) {
             Cromossomo a = (Cromossomo) i.next();
             System.out.println(a);

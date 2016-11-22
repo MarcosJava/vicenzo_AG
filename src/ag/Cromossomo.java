@@ -1,7 +1,7 @@
 package ag;
 
 public class Cromossomo {
-    double individuoX, individuoY, individuoZ;
+    private double individuoX, individuoY, individuoZ;
     
     public Cromossomo(double x, double y, double z) {
         this.individuoX = x;
@@ -9,16 +9,10 @@ public class Cromossomo {
         this.individuoZ = z;
     }
     
+    //Apenas para iniciar no Algoritmo Genetico , Fazer a populacao
     public Cromossomo() {
-
-    }
-    
-    @Override
-    public String toString() {
-        return "X: " + this.individuoX + " - " + "Y: " + this.individuoY + " - "
-                + "Z: " + this.individuoZ + " Avaliação: " + (individuoX+individuoY+individuoZ) + " ";
-    }
-
+		// construct vazio ! iniciar com null
+	}
     public void setIndividuoX(int individuoX) {
         this.individuoX = individuoX;
     }
@@ -43,6 +37,11 @@ public class Cromossomo {
         return individuoZ;
     }
     
+    @Override
+    public String toString() {
+        return "X: " + this.individuoX + " - " + "Y: " + this.individuoY + " - "
+                + "Z: " + this.individuoZ + " AvaliaÃ§Ã£o: " + (individuoX+individuoY+individuoZ) + " ";
+    }
     
     
     

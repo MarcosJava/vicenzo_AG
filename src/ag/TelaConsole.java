@@ -10,14 +10,16 @@ public class TelaConsole {
         Scanner scanner = new Scanner(System.in);
         AlgoritmoGenetico ag = new AlgoritmoGenetico();
         
+        Cromossomo cromo = new Cromossomo();
+        System.out.println(cromo.getIndividuoX());
         
         /***
          * DADOS DO USUARIO
          */
-        System.out.print("Função: ");
+        System.out.print("FunÃ§Ã£o: ");
         FunctionCalcExpression.funcao = scanner.nextLine();
                 
-        System.out.print("Tamanho da população: ");
+        System.out.print("Tamanho da populaÃ§Ã£o: ");
         tamanho = scanner.nextInt();
         
         System.out.print("Taxa de Crossover: ");
@@ -37,7 +39,6 @@ public class TelaConsole {
         
         System.out.print("Maior intervalo: ");
         maiorIntervalo= scanner.nextInt();
-
         
         /***
          * CODIGO DO CADERNO
