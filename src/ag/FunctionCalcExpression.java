@@ -15,8 +15,8 @@ public class FunctionCalcExpression implements Comparator {
         Cromossomo c1=(Cromossomo)o1;
         Cromossomo c2=(Cromossomo)o2;
         
-        teste = exec.Avaliacao(c1.getIndividuoX(), c1.getIndividuoY(), c1.getIndividuoZ());
-        teste2 = exec.Avaliacao(c2.getIndividuoX(), c2.getIndividuoY(), c2.getIndividuoZ());
+        teste = exec.avaliacao(c1.getIndividuoX(), c1.getIndividuoY(), c1.getIndividuoZ());
+        teste2 = exec.avaliacao(c2.getIndividuoX(), c2.getIndividuoY(), c2.getIndividuoZ());
                 
         if(teste < teste2)
             return 1;

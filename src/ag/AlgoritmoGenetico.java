@@ -33,8 +33,8 @@ public class AlgoritmoGenetico {
             	
             	//Se num aleatorio for menor que crossover
                 if(aleatorio.nextDouble() <= TelaConsole.crossover){
-                    escolhido1 = Selecao();
-                    escolhido2 = Selecao();
+                    escolhido1 = selecao();
+                    escolhido2 = selecao();
                     crossover(escolhido1, escolhido2); //Realiza o crossover
                 }
             }
@@ -77,7 +77,7 @@ public class AlgoritmoGenetico {
         }
     }
     
-    public double Avaliacao(double x, double y, double z){
+    public double avaliacao(double x, double y, double z){
         Calculable equacao;
         double resultado = 0;
         
@@ -96,7 +96,7 @@ public class AlgoritmoGenetico {
         return resultado;
     }
     
-    public int Selecao(){
+    public int selecao(){
         double soma = somaCromossomo();
         double roleta = (aleatorio.nextDouble() * (soma+1));
         double acc=0;
@@ -104,7 +104,7 @@ public class AlgoritmoGenetico {
         
         for(int i=0; i <= populacaoAux.size()-1; i++){
             cromossomo = (Cromossomo) populacaoAux.get(i);
-            acc = (acc + Avaliacao(cromossomo.getIndividuoX(), cromossomo.getIndividuoY(), cromossomo.getIndividuoZ()));
+            acc = (acc + avaliacao(cromossomo.getIndividuoX(), cromossomo.getIndividuoY(), cromossomo.getIndividuoZ()));
             if(roleta <= acc){
                 retorno = i;
                 i = populacaoAux.size()+1;
@@ -168,7 +168,7 @@ public class AlgoritmoGenetico {
 
         while (i.hasNext()) {
             Cromossomo a = (Cromossomo) i.next();
-            soma = (soma + Avaliacao(a.getIndividuoX(), a.getIndividuoY(), a.getIndividuoZ()));
+            soma = (soma + avaliacao(a.getIndividuoX(), a.getIndividuoY(), a.getIndividuoZ()));
         }
         return soma;
     }
